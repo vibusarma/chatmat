@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f8faff;
+  --foreground: #1e1b4b;
+  --primary: #4f46e5;
+  --primary-foreground: #ffffff;
+  --secondary: #e0e7ff;
+  --secondary-foreground: #1e1b4b;
+  --accent: #c7d2fe;
+  --muted: #6366f1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f172a;
+    --foreground: #e0e7ff;
+    --primary: #6366f1;
+    --primary-foreground: #ffffff;
+    --secondary: #1e1b4b;
+    --secondary-foreground: #e0e7ff;
+    --accent: #312e81;
+    --muted: #818cf8;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-geist-sans);
+  min-height: 100vh;
+}
+
+/* Add smooth transitions for dark mode */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+input {
+  color: var(--foreground);
+}
+
+output {
+  color: var(--foreground);
+}
