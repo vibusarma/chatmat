@@ -6,6 +6,7 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -17,7 +18,7 @@ export default {
         "secondary-foreground": "var(--secondary-foreground)",
         accent: "var(--accent)",
         muted: "var(--muted)",
-        'input-text': 'var(--foreground)',
+        border: "var(--border)",
       },
     },
   },

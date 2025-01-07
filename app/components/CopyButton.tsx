@@ -19,7 +19,7 @@ export default function CopyButton({ text }: CopyButtonProps) {
   return (
     <button
       onClick={handleCopy}
-      className="absolute right-2 top-2 p-2 rounded-lg bg-secondary/30 hover:bg-secondary/50 transition-colors"
+      className="absolute right-2 top-2 p-2 rounded-lg bg-secondary/30 hover:bg-secondary/50 transition-colors text-white"
       aria-label="Copy code"
     >
       {copied ? <FiCheck size={16} /> : <FiCopy size={16} />}

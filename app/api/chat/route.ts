@@ -1,3 +1,4 @@
+import { auth } from "@clerk/nextjs";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -5,6 +6,13 @@ const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY!);
 
 export async function POST(request: NextRequest) {
   try {
+    // Get auth session
+    const { userId } = await auth();
+
+    if (!userId) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
     const { message } = await request.json();
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     
@@ -54,6 +62,7 @@ Remember to:
     
     return NextResponse.json({ message: text });
   } catch (error) {
+    console.error("Error:", error);
     return NextResponse.json(
       { error: "Error processing request" },
       { status: 500 }
